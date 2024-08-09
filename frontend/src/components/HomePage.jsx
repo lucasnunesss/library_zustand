@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import MainDiv from "../styles/MainDiv"
-import About from "./About"
-import { useState } from "react"
+
+import {  useInput } from "./stores/showInput"
+import AddBooks from "./Input/AddBooks"
 
 const ButtonMain = styled.button`
   all: unset;
@@ -23,14 +24,23 @@ const ButtonMain = styled.button`
 `
 
 const HomePage = () => {
-  const [openAddBook, setOpenAddBook] = useState(false)
+
+  const inputSettings = useInput()
+
+  
+  function showInput(){
+
+
+    inputSettings.showInput()
+  }
   return (
    
       <MainDiv>
-        <ButtonMain type={openAddBook} onClick={() => setOpenAddBook(true)} >+ Add Book</ButtonMain>
+        <ButtonMain type={inputSettings.input} onClick={showInput} >+ Add Book</ButtonMain>
  
-        {openAddBook ? (
-          <About />
+        {inputSettings.input ? (
+          
+          <AddBooks />
         ) : null}
       </MainDiv>
    
