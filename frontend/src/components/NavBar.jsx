@@ -14,7 +14,7 @@ const LibraryH1 = styled.h1`
 const NavBtn = styled.button`
   all: unset;
   background-color: var(--background-main);
-   color: var(--color-text);
+  color: var(--color-text);
   margin: 10px;
   padding: 8px;
   text-align: center;
@@ -29,7 +29,6 @@ const NavBar = () => {
         <LibraryH1>Library</LibraryH1>
         <NavBtn>Request</NavBtn>
         <NavBtn>Login</NavBtn>
-   
       </NavDiv>
       <Outlet />
     </>
