@@ -6,20 +6,57 @@ const FormsPage = styled.div`
   flex-direction: column;
   background-color: white;
   position: relative;
-  width: 30%;
-  margin: auto;
-  padding: 20px;
+  width: 350px;
+  top: 20%;
+
+  padding: 15px;
   gap: 20px;
-  h5,button, input{
-    padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+  h5, input{
+  padding: 10px 30px 10px 10px;
+  outline: none;
+    
   }
 
-  h5, button{
+  h3, button{
     margin:auto;
   }
-  input{
-    width:60%;
+
+
+  input[type=text], input[type="number"]{
+    border: 1px solid gray;
+    border-radius: 10px;
+  }
+  
+ div{
+  position: relative;
+  font-size: 1em;
+  left: 20%;
+
+ }
+  
+ div > input{
+  height: 18px;
+  width: 18px;
+ }
+ 
+  div > span{
+  position: absolute;
+  left: 20px;
+  font-weight: 600;
+  width: 100%;
+  }
+
+  button{
+    all: unset;
+    background-color: #8FE58C;
+    width:90%;
     margin: auto;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
   }
 `
 
@@ -31,15 +68,18 @@ const AddBooks = () => {
    }
   return (
     <FormsPage>
-      <h5>Adicionar Novos Pedidos</h5>
+      <h3>Adicionar Novos Pedidos</h3>
   
         <input type="text" name="title" id="" placeholder="Título" />
         <input type="text" name="author" id="" placeholder="Autor" />
         <input type="number" name="pages" id="" placeholder="Páginas" />
-        <label htmlFor="read">
-          <input type="checkbox" name="read" id=""/>
-          Finalizado
-        </label>
+       
+          <div>
+            <span> Livro Finalizado </span>
+            <input type="checkbox" name="read" id=""/> 
+          
+          </div>
+      
    
      
       <button onClick={noneInput}>Enviar</button>

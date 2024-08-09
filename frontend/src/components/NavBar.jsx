@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import NavDiv from "../styles/NavDiv"
 import styled from "styled-components"
+import { useInput } from "./stores/showInput"
 
 const LibraryH1 = styled.h1`
   color: var(--color-text);
@@ -23,9 +24,10 @@ const NavBtn = styled.button`
 `
 
 const NavBar = () => {
+  const showInput = useInput()
   return (
     <>
-      <NavDiv>
+      <NavDiv background={showInput.input}>
         <LibraryH1>Library</LibraryH1>
         <NavBtn>Request</NavBtn>
         <NavBtn>Login</NavBtn>
