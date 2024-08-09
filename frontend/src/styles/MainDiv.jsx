@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 const MainDiv = styled.div`
-  background-color: var(--background-main);
+  background-color: ${(props) => (props.background ? "gray" : "var(--background-main)")};
   position: absolute;
-  height: 88%;
+  height: 90%;
   width: 100%;
+  overflow: hidden;
 `
 
 

@@ -27,7 +27,7 @@ const HomePage = () => {
 
   const inputSettings = useInput()
 
-  
+
   function showInput(){
 
 
@@ -35,8 +35,8 @@ const HomePage = () => {
   }
   return (
    
-      <MainDiv>
-        <ButtonMain type={inputSettings.input} onClick={showInput} >+ Add Book</ButtonMain>
+      <MainDiv background={inputSettings.input}>
+        <ButtonMain onClick={showInput} >+ Add Book</ButtonMain>
  
         {inputSettings.input ? (
           

@@ -7,4 +7,4 @@ const showInput = (set) => ({
   showInput: () => set((status) => ({input: true}))
 })
 
-export const useInput = create(showInput)
+export const useInput  = create(showInput)
