@@ -1,0 +1,13 @@
+:root{
+  --regular-font: sans-serif;
+  --color-text: #050505;
+  --background-main: #F0EEF1;
+  --backgroud-text: #FFFBFB;
+}
+
+*{
+  font-family: var(--regular-font);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

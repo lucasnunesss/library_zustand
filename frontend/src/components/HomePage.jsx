@@ -1,9 +1,10 @@
-
+import MainDiv from "../styles/MainDiv"
 const HomePage = () => {
   return (
     <>
-   
-      <h1>Home Page</h1>
+      <MainDiv>
+        <button>Add Book</button>
+      </MainDiv>
     </>
   )
 }
