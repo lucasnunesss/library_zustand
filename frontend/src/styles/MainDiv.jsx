@@ -6,9 +6,9 @@ const MainDiv = styled.div`
   height: 90%;
   width: 100%;
   overflow: hidden;
-
+  
   button{
-    background-color: ${(props) => (props.background ? "#787778" : "var(--background-main)")}
+    background-color: ${(props) => (props.background ? "#787778" : "var(--background-main)")};
   }
 `
 

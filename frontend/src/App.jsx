@@ -10,7 +10,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-
         <Routes>
         <Route path="/" element={<NavBar />}>
           <Route path="/mybooks" element={<HomePage />} />

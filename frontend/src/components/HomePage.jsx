@@ -3,6 +3,7 @@ import MainDiv from "../styles/MainDiv"
 
 import {  useInput } from "./stores/showInput"
 import AddBooks from "./Input/AddBooks"
+import BookList from "./BooksList"
 
 const ButtonMain = styled.button`
   all: unset;
@@ -11,7 +12,9 @@ const ButtonMain = styled.button`
   border: 1px solid gray;
   position: relative;
   left: 45%;
-  top: 10%;
+  top: 200px;
+  z-index: 2;
+  bottom: 10%;
   padding: 5px 20px 5px 20px;
   font-weight: bold; 
   font-size: 1.3em;
@@ -29,21 +32,27 @@ const HomePage = () => {
 
 
   function showInput(){
-
-
-    inputSettings.showInput()
+      inputSettings.noneInput()
+  
   }
   return (
-   
-      <MainDiv background={inputSettings.input}>
-        <ButtonMain onClick={showInput} >+ Add Book</ButtonMain>
- 
-        {inputSettings.input ? (
+    <>
+
+  
+      <MainDiv background={inputSettings.input} onClick={showInput}>
+     
+      </MainDiv>
+      <ButtonMain  onClick={() => inputSettings.showInput()} >+ Add Book</ButtonMain>
+      {inputSettings.input ? (
           
           <AddBooks />
         ) : null}
-      </MainDiv>
-   
+      
+      <BookList   />
+     
+       
+        
+      </>
   )
 }
 

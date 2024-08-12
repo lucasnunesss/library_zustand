@@ -27,7 +27,7 @@ const NavBar = () => {
   const showInput = useInput()
   return (
     <>
-      <NavDiv background={showInput.input}>
+      <NavDiv background={showInput.input} onClick={() => showInput.noneInput()}>
         <LibraryH1>Library</LibraryH1>
         <NavBtn>Request</NavBtn>
         <NavBtn>Login</NavBtn>

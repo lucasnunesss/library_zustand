@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import { useInput } from "../stores/showInput"
+import { useBook } from "../stores/BookStore"
+import { useState } from "react"
 
 const FormsPage = styled.div`
   display: flex;
@@ -7,12 +9,12 @@ const FormsPage = styled.div`
   background-color: white;
   position: relative;
   width: 350px;
-  top: 20%;
-
+  top: 150px;
+  margin: auto;
   padding: 15px;
   gap: 20px;
   border-radius: 10px;
-  margin: auto;
+  z-index: 2000;
   h5, input{
   padding: 10px 30px 10px 10px;
   outline: none;
@@ -61,18 +63,20 @@ const FormsPage = styled.div`
 `
 
 const AddBooks = () => {
+    const [localBook, setLocalBook] = useState({title: "", author: "", pages: ""})
    const showInput = useInput()
-
+  const {books, addBook} = useBook()
    function noneInput(){
+    addBook(localBook.title, localBook.author, localBook.pages)
     showInput.noneInput()
    }
   return (
     <FormsPage>
       <h3>Adicionar Novos Pedidos</h3>
   
-        <input type="text" name="title" id="" placeholder="Título" />
-        <input type="text" name="author" id="" placeholder="Autor" />
-        <input type="number" name="pages" id="" placeholder="Páginas" />
+        <input type="text" name="title" id="" placeholder="Título" onChange={e => setLocalBook({...localBook, title: e.target.value})} />
+        <input type="text" name="author" id="" placeholder="Autor" onChange={e => setLocalBook({...localBook, author: e.target.value})} />
+        <input type="number" name="pages" id="" placeholder="Páginas" onChange={e => setLocalBook({...localBook, pages: e.target.value})} />
        
           <div>
             <span> Livro Finalizado </span>
