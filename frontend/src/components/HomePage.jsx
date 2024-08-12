@@ -12,9 +12,8 @@ const ButtonMain = styled.button`
   border: 1px solid gray;
   position: relative;
   left: 45%;
-  top: 200px;
+  top: 100px;
   z-index: 2;
-  bottom: 10%;
   padding: 5px 20px 5px 20px;
   font-weight: bold; 
   font-size: 1.3em;
