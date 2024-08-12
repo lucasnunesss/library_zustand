@@ -6,21 +6,19 @@ const BookDiv = styled.div`
   display:grid;
   grid-template-columns: repeat(3, 1fr); 
   gap: 106px;
-  position: absolute;
-  top: 40%;
-  left: 17%;
+
+  margin-top: 200px;
+  margin-left: 10px;
   z-index: 2;
 
- @media (max-width: 1450px){
-  left: 10%;
- }
+
   
   div {
-    background: ${(props) => (props.background ? "#787778" : "var(--background-main)")};
+    background: ${(props) => (props.background ? "#787778" : "white")};
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    width: 300px;
+  
 
     button{
           background: ${(props) => (props.background ? "#787778" : "var(--background-main)")};

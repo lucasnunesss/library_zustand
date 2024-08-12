@@ -7,7 +7,7 @@ import BookList from "./BooksList"
 
 const ButtonMain = styled.button`
   all: unset;
-  background-color: var(--background-main);
+  background: ${(props) => (props.background ? "#787778" : "var(--background-main)")};
   color: var(--color-text);
   border: 1px solid gray;
   position: relative;
@@ -21,7 +21,7 @@ const ButtonMain = styled.button`
   border-radius: 10px;
   display: ${(props) => (props.type ? "none" : "block")};
   &:hover{
-  background-color: gray;
+      background-color: gray;
   }
 `
 
@@ -39,15 +39,15 @@ const HomePage = () => {
 
   
       <MainDiv background={inputSettings.input} onClick={showInput}>
-     
+      <BookList   />
       </MainDiv>
-      <ButtonMain  onClick={() => inputSettings.showInput()} >+ Add Book</ButtonMain>
+      <ButtonMain background={inputSettings.input} onClick={() => inputSettings.showInput()} >+ Add Book</ButtonMain>
       {inputSettings.input ? (
           
           <AddBooks />
         ) : null}
       
-      <BookList   />
+    
      
        
         

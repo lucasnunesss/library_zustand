@@ -67,9 +67,19 @@ const AddBooks = () => {
    const showInput = useInput()
   const {books, addBook} = useBook()
    function noneInput(){
+
+  
+    if(books.length > 0){
+      for (let i = 0; i < books.length; i++){
+        if(books[i].title === localBook.title){
+          return alert('mesmo titulo')
+        }
+      }
+    }
     addBook(localBook.title, localBook.author, localBook.pages, localBook.lido)
+
     showInput.noneInput()
-    console.log(books)
+   
    }
   return (
     <FormsPage>
