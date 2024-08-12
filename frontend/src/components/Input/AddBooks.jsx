@@ -63,12 +63,13 @@ const FormsPage = styled.div`
 `
 
 const AddBooks = () => {
-    const [localBook, setLocalBook] = useState({title: "", author: "", pages: ""})
+    const [localBook, setLocalBook] = useState({title: "", author: "", pages: "", lido: false})
    const showInput = useInput()
   const {books, addBook} = useBook()
    function noneInput(){
-    addBook(localBook.title, localBook.author, localBook.pages)
+    addBook(localBook.title, localBook.author, localBook.pages, localBook.lido)
     showInput.noneInput()
+    console.log(books)
    }
   return (
     <FormsPage>
@@ -80,7 +81,7 @@ const AddBooks = () => {
        
           <div>
             <span> Livro Finalizado </span>
-            <input type="checkbox" name="read" id=""/> 
+            <input type="checkbox" name="read" id="" onChange={e => setLocalBook({...localBook, lido: e.target.checked})}/> 
           
           </div>
       
