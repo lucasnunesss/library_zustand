@@ -71,7 +71,7 @@ const AddBooks = () => {
   
     if(books.length > 0){
       for (let i = 0; i < books.length; i++){
-        if(books[i].title === localBook.title){
+        if(books[i].title.toLowerCase() === localBook.title.toLowerCase()){
           return alert('mesmo titulo')
         }
       }
