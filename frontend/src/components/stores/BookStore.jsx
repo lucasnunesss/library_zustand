@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { v4 as uuidv4 } from 'uuid';
+import { persist, createJSONStorage } from 'zustand/middleware'
 const initialValue = {
   books: []
 }
@@ -11,4 +12,7 @@ const bookStore = (set) => ({
     updateReader: (bookId, newValue) => set((state) => ({books: state.books.map((data) => data.id === bookId ? newValue : data )}))
 })
 
-export const useBook = create(bookStore)
+export const useBook = create(persist(bookStore, {
+  name: 'books',
+  storage: createJSONStorage(() => localStorage)
+}))

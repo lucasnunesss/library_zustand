@@ -41,7 +41,7 @@ const HomePage = () => {
       <MainDiv background={inputSettings.input} onClick={showInput}>
       <BookList   />
       </MainDiv>
-      <ButtonMain background={inputSettings.input} onClick={() => inputSettings.showInput()} >+ Add Book</ButtonMain>
+      <ButtonMain background={inputSettings.input} type={inputSettings.input} onClick={() => inputSettings.showInput()} >+ Add Book</ButtonMain>
       {inputSettings.input ? (
           
           <AddBooks />
